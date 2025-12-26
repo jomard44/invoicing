@@ -1,11 +1,10 @@
-import express from "express"
-import invoiceActions from "./invoiceActions.js"
-import auth from "./auth.js"
-const router = express.Router()
+import express from "express";
+import invoiceActions from "./invoiceActions.js";
+import auth from "./auth.js";
+import authenticateUser from "../../middleware/authService.js";
+const router = express.Router();
 
+router.use("/auth", auth);
+router.use("/invoices", authenticateUser, invoiceActions);
 
-router.use("/invoices", invoiceActions)
-router.use("/auth",auth)
-
-
-export default router
+export default router;

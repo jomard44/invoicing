@@ -2,10 +2,12 @@ import express from "express";
 import mongoose from "mongoose";
 import router from "./routes/api/index.js";
 import dotenv from "dotenv";
+import cookieParser from "cookie-parser";
 dotenv.config();
 
 const app = express();
 app.use(express.json());
+app.use(cookieParser())
 
 app.use("/api", router);
 

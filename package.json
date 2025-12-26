@@ -1,0 +1,28 @@
+{
+  "name": "invoicing",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/jomard44/invoicing#readme",
+  "bugs": {
+    "url": "https://github.com/jomard44/invoicing/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jomard44/invoicing.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev":"nodemon main.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "mongoose": "^9.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}

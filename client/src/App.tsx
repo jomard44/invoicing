@@ -3,6 +3,8 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Create from "./pages/Create";
 import Navbar from "./componenets/Navbar";
+import Edit from "./pages/Edit"
+import Delete from "./pages/Delete";
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
           <Route path={"/"} element={<Home />} />
           <Route path={"/about"} element={<About/>} />
           <Route path={"/create"} element={<Create/>} />
+          <Route path={"/edit"} element={<Edit/>} />
+          <Route path={"/delete"} element={<Delete/>} />
         </Routes>
       </BrowserRouter>
     </>

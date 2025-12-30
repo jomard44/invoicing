@@ -4,8 +4,10 @@ import router from "./routes/api/index.js";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 dotenv.config();
+import cors from "cors"
 
 const app = express();
+app.use(cors())
 app.use(express.json());
 app.use(cookieParser())
 

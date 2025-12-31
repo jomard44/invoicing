@@ -4,12 +4,12 @@ import "../index.css";
 
 const Home = () => {
   type Invoice = {
-   _id:string,
-    title:string,
-    clientEmail:string,
-    status:string,
-    date:string
-  }
+    _id: string;
+    title: string;
+    clientEmail: string;
+    status: string;
+    date: string;
+  };
   const [invoices, setInvoices] = useState<Invoice[]>([]);
 
   useEffect(() => {
@@ -20,15 +20,13 @@ const Home = () => {
           console.error("no response from server");
         }
         const data = await res.json();
-        console.log("checking ids",data)
 
         setInvoices(data);
       } catch (error) {
         console.error(error);
       }
-
     };
-    fetchInvoices()
+    fetchInvoices();
   }, []);
 
   return (
@@ -37,13 +35,13 @@ const Home = () => {
       {invoices.map((invoice) => (
         <InvoiceCard
         key={invoice._id}
+        _id={invoice._id}
           title={invoice.title}
           clientEmail={invoice.clientEmail}
           status={invoice.status}
           date={invoice.date}
         />
-        ))}
-    
+      ))}
     </>
   );
 };

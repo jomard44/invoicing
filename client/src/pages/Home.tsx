@@ -4,6 +4,7 @@ import "../index.css";
 
 const Home = () => {
   type Invoice = {
+   _id:string,
     title:string,
     clientEmail:string,
     status:string,
@@ -19,6 +20,8 @@ const Home = () => {
           console.error("no response from server");
         }
         const data = await res.json();
+        console.log("checking ids",data)
+
         setInvoices(data);
       } catch (error) {
         console.error(error);
@@ -31,9 +34,9 @@ const Home = () => {
   return (
     <>
       <h1 className="text-center m-5">your invoices</h1>
-      {invoices.map((invoice,index) => (
+      {invoices.map((invoice) => (
         <InvoiceCard
-        key={index}
+        key={invoice._id}
           title={invoice.title}
           clientEmail={invoice.clientEmail}
           status={invoice.status}

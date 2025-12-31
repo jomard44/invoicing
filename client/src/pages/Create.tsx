@@ -6,6 +6,7 @@ const Create = () => {
     clientEmail: "",
     status: "",
     date: "",
+    amount: "",
   });
 
   const handleOnChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -18,6 +19,7 @@ const Create = () => {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    console.log(data);
     try {
       const postData = await fetch("http://localhost:3000/api/invoices", {
         method: "POST",
@@ -26,7 +28,7 @@ const Create = () => {
         },
         body: JSON.stringify(data),
       });
-      console.log(postData)
+      console.log(postData);
     } catch (error) {
       console.error(error);
     }
@@ -61,9 +63,20 @@ const Create = () => {
           </div>
 
           <div className="flex flex-col gap-1">
+            <label className="text-sm text-white/80">Amount</label>
+            <input
+              type="number"
+              name="amount"
+              min={0}
+              className="bg-white/40 rounded px-3 py-2 outline-none focus:ring-2 focus:ring-blue-500"
+              onChange={handleOnChange}
+            />
+          </div>
+
+          <div className="flex flex-col gap-1">
             <label className="text-sm text-white/80">Status</label>
             <input
-              type="list"
+              type="text"
               list="options"
               name="status"
               className="bg-white/40 rounded px-3 py-2 outline-none focus:ring-2 focus:ring-blue-500"

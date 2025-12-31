@@ -7,16 +7,16 @@ const Create = () => {
     clientEmail: "",
     status: "",
     date: "",
-    amount: "",
+    amount: 0,
   });
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleOnChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setData((prev) => ({
       ...prev,
-      [name]: value,
+      [name]: name === "amount"? Number(value): value,
     }));
   };
 
@@ -31,8 +31,13 @@ const Create = () => {
         },
         body: JSON.stringify(data),
       });
-      console.log(postData);
-      navigate("/")
+      const response = await postData.json();
+      console.log(response);
+      if (!postData.ok) {
+        throw new Error(response.message && "error posting data to the server");
+      }
+
+      navigate("/");
     } catch (error) {
       console.error(error);
     }

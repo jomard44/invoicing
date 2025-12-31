@@ -52,7 +52,7 @@ const InvoiceCard = ({
           </p>
         </div>
         <div className="pl-2 flex  ">
-          <Link to="/edit">
+          <Link to={`/edit/${_id}`}>
             <button className="bg-green-600/90 font-bold border w-50 rounded flex items-center gap-2  pl-20 py-1 hover:bg-gray-300/30">
               Edit
               <Pencil width={20} height={20} />

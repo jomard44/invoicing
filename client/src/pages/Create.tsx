@@ -1,4 +1,5 @@
 import { useState, type ChangeEvent, type FormEvent } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Create = () => {
   const [data, setData] = useState({
@@ -8,6 +9,8 @@ const Create = () => {
     date: "",
     amount: "",
   });
+
+  const navigate = useNavigate()
 
   const handleOnChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -29,6 +32,7 @@ const Create = () => {
         body: JSON.stringify(data),
       });
       console.log(postData);
+      navigate("/")
     } catch (error) {
       console.error(error);
     }
@@ -100,7 +104,7 @@ const Create = () => {
           </div>
 
           <button className="mt-4 bg-blue-600 hover:bg-blue-700 transition text-white rounded py-2 font-medium">
-            Submit
+            Create Invoice
           </button>
         </form>
       </div>

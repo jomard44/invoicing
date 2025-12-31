@@ -8,6 +8,7 @@ const Home = () => {
     title: string;
     clientEmail: string;
     status: string;
+    amount:number;
     date: string;
   };
   const [invoices, setInvoices] = useState<Invoice[]>([]);
@@ -38,6 +39,7 @@ const Home = () => {
         _id={invoice._id}
           title={invoice.title}
           clientEmail={invoice.clientEmail}
+          amount={invoice.amount}
           status={invoice.status}
           date={invoice.date}
         />

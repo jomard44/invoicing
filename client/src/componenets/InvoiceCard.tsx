@@ -7,12 +7,14 @@ type InvoiceCardProps={
   title:string,
   clientEmail:string,
   status:string,
+  amount:number,
   date:string
 }
 const InvoiceCard = ({
   _id = "id",
   title = "title of the invoice",
   clientEmail = "client email address e.g example@gmail.com ",
+  amount = 0,
   status = "pending",
   date = "00/00/0000",
 }:InvoiceCardProps) => {
@@ -43,6 +45,9 @@ const InvoiceCard = ({
           </p>
           <p>
             <strong>client email:</strong> {clientEmail}
+          </p>
+          <p>
+            <strong>amount:</strong> {amount}
           </p>
           <p>
             <strong>status:</strong> {status}

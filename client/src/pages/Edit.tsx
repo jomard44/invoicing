@@ -116,14 +116,13 @@ const Edit = () => {
             <label className="text-sm text-white/80">Status</label>
             <input
               type="text"
-              name="status"
               list="options"
+              name="status"
               className="bg-white/40 rounded px-3 py-2 outline-none focus:ring-2 focus:ring-blue-500"
               onChange={handleOnChange}
               value={data.status}
-              
             />
-             <datalist id="options">
+            <datalist id="options">
               <option value="pending" />
               <option value="paid" />
               <option value="overdue" />

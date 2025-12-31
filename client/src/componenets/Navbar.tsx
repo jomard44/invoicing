@@ -8,7 +8,7 @@ const Navbar = () => {
         
         <Link to={"/"}><p className="ml-5 text-red-300 font-bold hover:text-white" >Invoicing-master</p></Link>
         <Link to={"/create"}><div className="flex"><CirclePlus className="mr-1"/><p className="text-red-300 font-bold hover:text-white">Create Invoice</p> </div></Link>
-        <Link to={"/about"}><p className="mr-5 text-red-300 font-bold hover:text-white">About Us</p> </Link>
+        <Link to={"/auth"}><p className="mr-5 text-red-300 font-bold hover:text-white">Signin</p> </Link>
 
     </div>
   )

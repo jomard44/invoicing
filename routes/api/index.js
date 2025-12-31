@@ -5,6 +5,6 @@ import authenticateUser from "../../middleware/authService.js";
 const router = express.Router();
 
 router.use("/auth", auth);
-router.use("/invoices",/* authenticateUser,*/ invoiceActions);
+router.use("/invoices", authenticateUser, invoiceActions);
 
 export default router;
